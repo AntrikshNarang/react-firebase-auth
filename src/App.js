@@ -9,7 +9,7 @@ import { auth } from './firebase';
 function App() {
   const [UserName, setUserName] = useState('');
   useEffect( () => {
-     auth.onAuthStateChanged((user)=>{
+      auth.onAuthStateChanged((user)=>{
       if (user) {
         setUserName(user.displayName);
       } else {
@@ -25,7 +25,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home UserName={UserName}/>} />
           <Route exact path="/login" element={<Login/>} />
-          <Route exact path="/signup" element={<Signup/>} />
+          <Route exact path="/signup" element={<Signup setUserName={setUserName}/>} />
         </Routes>
       </Router>
     </>

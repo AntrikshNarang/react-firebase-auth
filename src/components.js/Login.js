@@ -22,8 +22,7 @@ export const Login = () => {
         setsubmitButtonPressed(true)
         seterrormsg('');
         try {
-            const res = await signInWithEmailAndPassword(auth,params.email,params.password)
-            const User = res.user;
+            await signInWithEmailAndPassword(auth,params.email,params.password)
             setsubmitButtonPressed(false)
             navigate('/');
         } catch (err) {
@@ -32,7 +31,7 @@ export const Login = () => {
         }
     }
     return (
-        <div div className="main-div" >
+        <div className="main-div" >
             <div className="center-div">
                 <h1>Login</h1>
                 <InputForm label='Email' placeholder='Enter your email' type='text'

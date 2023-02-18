@@ -5,7 +5,7 @@ import { auth } from '../firebase'
 import { InputForm } from './InputForm'
 import './styles.css'
 
-export const Signup = () => {
+export const Signup = (props) => {
     const navigate = useNavigate();
     const [params, setparams] = useState({
         name: '',
@@ -26,6 +26,7 @@ export const Signup = () => {
             const res = await createUserWithEmailAndPassword(auth,params.email,params.password);
             const User=res.user;
             await updateProfile(User,{displayName:params.name})
+            User && props.setUserName(User.displayName);
             setsubmitButtonPressed(false)
             navigate('/');
         }catch(err){
