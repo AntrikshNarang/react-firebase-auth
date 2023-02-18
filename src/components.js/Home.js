@@ -20,7 +20,7 @@ export const Home = (props) => {
                     <Link className='btn' to='/login'>Login</Link><br></br>
                     <Link className='btn' to='/signup'>Sign up</Link>
                     <p>{props.UserName ? "Hi " + props.UserName : "Login Please"}</p>
-                    {props.UserName && <p>Not You? <span class='link' onClick={handleSubmit}>Sign Out</span></p>}
+                    {props.UserName && <p>Not You? <span className='link' onClick={handleSubmit}>Sign Out</span></p>}
                 </div>
             </div>
         </>

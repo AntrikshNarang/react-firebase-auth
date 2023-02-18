@@ -25,7 +25,6 @@ export const Login = () => {
             const res = await signInWithEmailAndPassword(auth,params.email,params.password)
             const User = res.user;
             setsubmitButtonPressed(false)
-            console.log(User)
             navigate('/');
         } catch (err) {
             setsubmitButtonPressed(false)

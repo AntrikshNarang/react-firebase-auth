@@ -25,9 +25,8 @@ export const Signup = () => {
         try{
             const res = await createUserWithEmailAndPassword(auth,params.email,params.password);
             const User=res.user;
-            setsubmitButtonPressed(false)
             await updateProfile(User,{displayName:params.name})
-            console.log(User)
+            setsubmitButtonPressed(false)
             navigate('/');
         }catch(err){
             setsubmitButtonPressed(false)
