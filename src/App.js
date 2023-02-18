@@ -21,7 +21,7 @@ function App() {
   
   return (
     <>
-      <Router>
+      <Router basename='/react-firebase-auth'>
         <Routes>
           <Route path="/" element={<Home UserName={UserName}/>} />
           <Route path="/login" element={<Login/>} />
